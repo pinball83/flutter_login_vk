@@ -23,6 +23,6 @@ flutter:
     platforms:
       android:
         package: ru.innim.flutter_login_vk
-        pluginClass: FlutterLoginVkPlugin.kt
+        pluginClass: FlutterLoginVkPlugin
       ios:
         pluginClass: FlutterLoginVkPlugin
