@@ -38,8 +38,6 @@ class MethodCallHandler(private val _context: Context, private val _loginCallbac
                     if (rawAppId != null) {
                         appId = rawAppId.toInt()
                         if (appId != 0) {
-//                            var apiVersion = call.argument<String>(_API_VERSION_INIT_ARG)
-//                            val initScope = call.argument<List<String>>(_SCOPE_INIT_ARG)!!
                             result(initSdk(), r)
                         } else {
                             error(FlutterError.invalidArgs("Arguments is invalid", null), r)
