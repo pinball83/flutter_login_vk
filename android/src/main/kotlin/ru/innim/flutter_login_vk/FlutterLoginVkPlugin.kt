@@ -15,6 +15,7 @@ class FlutterLoginVkPlugin : FlutterPlugin, ActivityAware {
     private var _methodCallHandler: MethodCallHandler? = null
     private var _activityListener: ActivityListener? = null
     private var _activityPluginBinding: ActivityPluginBinding? = null
+
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPluginBinding) {
         val messenger = flutterPluginBinding.binaryMessenger
         _dartChannel = MethodChannel(messenger, _CHANNEL_NAME)
