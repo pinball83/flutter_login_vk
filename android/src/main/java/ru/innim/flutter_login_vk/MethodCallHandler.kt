@@ -10,6 +10,7 @@ import com.vk.api.sdk.VK.logout
 import com.vk.api.sdk.auth.VKScope
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import java.util.*
 
 class MethodCallHandler(private val _context: Context, private val _loginCallback: LoginCallback) : MethodChannel.MethodCallHandler {
     private var _activity: Activity? = null
@@ -59,7 +60,7 @@ class MethodCallHandler(private val _context: Context, private val _loginCallbac
 
     private fun logIn(scope: List<String>, result: MethodChannel.Result) {
         _loginCallback.addPending(result)
-        VK.login(_activity!!, scope.map(VKScope::valueOf))
+        VK.login(_activity!!, scope.map { VKScope.valueOf(it.toUpperCase(Locale.ROOT)) })
     }
 
     private fun logOut() {
