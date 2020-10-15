@@ -2,7 +2,7 @@
 class VKAccessToken {
   final String token;
   final int expiresIn;
-  final String userId;
+  final int userId;
   final String secret;
   final bool httpsRequired;
   final DateTime created;
@@ -12,8 +12,7 @@ class VKAccessToken {
       : token = map['token'],
         userId = map['userId'],
         expiresIn = map['expiresIn'],
-        created =
-            DateTime.fromMillisecondsSinceEpoch(map['created'], isUtc: true),
+        created = DateTime.fromMillisecondsSinceEpoch(map['created'], isUtc: true),
         secret = map['secret'],
         email = map['email'],
         httpsRequired = map['httpsRequired'];
@@ -43,14 +42,7 @@ class VKAccessToken {
           httpsRequired == other.httpsRequired;
 
   @override
-  int get hashCode =>
-      token.hashCode ^
-      userId.hashCode ^
-      expiresIn.hashCode ^
-      created.hashCode ^
-      secret.hashCode ^
-      email.hashCode ^
-      httpsRequired.hashCode;
+  int get hashCode => token.hashCode ^ userId.hashCode ^ expiresIn.hashCode ^ created.hashCode ^ secret.hashCode ^ email.hashCode ^ httpsRequired.hashCode;
 
   @override
   String toString() {
